@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-title style="color:white">Create a new Node</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header><b>New Node</b></ion-list-header>
+
+    <ion-item>
+      <!-- <ion-avatar slot="start">
+        <ion-img button (click)="get_node_image()" [src]="node_pic_placeholder"></ion-img>
+      </ion-avatar> -->
+      <ion-thumbnail slot="start">
+        <ion-img style="border-radius:50%" button (click)="get_node_image()" [src]="node_pic_placeholder"></ion-img>
+      </ion-thumbnail>
+      
+        <ion-input [(ngModel)]="node_name" (ngModelChange) ="check_availability_caller()" required type="text" placeholder="Type a name" required></ion-input>
+      <!-- <ion-button (click)="create_node_caller()" fill="clean" expand="full" size="default">
+        <ion-icon button item-end name="md-checkmark-circle" size="large" color="success"></ion-icon>
+      </ion-button> -->
+    </ion-item>
+    <label [class]="text_color">{{ check_msg }}</label>
+    <br>
+    <ion-item>
+      <ion-input [(ngModel)]="node_description" required type="text" placeholder="Node description" required></ion-input>
+    </ion-item>
+
+   </ion-list>  
+   <br>
+
+    <ion-button (click)="create_node_caller()" color="success" expand="block" size="default" fill="outline">
+      <!-- <ion-icon button item-end name="md-checkmark-circle" size="large" color="success"></ion-icon> -->
+    Create
+    </ion-button>
+
+   <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed" style="background-color:white" button (click)="create_node_caller()">
+    <ion-fab-button>
+      <ion-icon item-end name="md-checkmark" size="large"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+
+
+
+
+</ion-content>

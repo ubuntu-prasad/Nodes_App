@@ -1,0 +1,7 @@
+{
+  "name": "psn_app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

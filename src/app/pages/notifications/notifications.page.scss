@@ -1,0 +1,16 @@
+.new-background-color{
+    --background: #364156;
+}
+
+ion-content {
+    div {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: grey;
+      font-family: monospace
+    }
+   }

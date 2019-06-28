@@ -1,0 +1,60 @@
+<ion-content padding>
+
+    <ion-card>
+        <ion-item class="wrap">
+            <ion-thumbnail slot="start" >
+                <ion-img class="ghost" src="https://firebasestorage.googleapis.com/v0/b/psn-server-16b36.appspot.com/o/{{node_profile_pic}}?alt=media" style="border-radius:50%"></ion-img>
+            </ion-thumbnail>
+          <ion-label>
+            <h2><b>@{{node_name}}</b></h2>
+            <p>{{node_description}}</p>
+          </ion-label>
+        </ion-item>
+        <!-- <ion-img  src="https://firebasestorage.googleapis.com/v0/b/psn-server-16b36.appspot.com/o/02ua0llb19wxkhtezn6bmcf?alt=media" style="border-radius:50%"></ion-img>
+
+        <ion-card-header>
+          <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+          <ion-card-title>Card Title</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          Keep close to Nature's heart... and break clear away, once in awhile,
+          and climb a mountain or spend a week in the woods. Wash your spirit clean.
+        </ion-card-content> -->
+      </ion-card>
+
+  <!-- <ion-list>
+    
+    <ion-item class="wrap">
+        <ion-thumbnail slot="start" >
+            <ion-img class="ghost" src="https://firebasestorage.googleapis.com/v0/b/psn-server-16b36.appspot.com/o/02ua0llb19wxkhtezn6bmcf?alt=media" style="border-radius:50%"></ion-img>
+        </ion-thumbnail>
+      <ion-label>
+        <h2><b>hkhjk</b></h2>
+        <p>hjkhk</p>
+      </ion-label>
+    </ion-item>
+</ion-list> -->
+
+
+<ion-list *ngIf="connected_user_data"> 
+  <ion-list-header>Members</ion-list-header>  
+  <ion-item class="wrap" *ngFor="let user of connected_user_data">
+      <ion-avatar slot="start">
+          <ion-img  class="ghost"  src="https://firebasestorage.googleapis.com/v0/b/psn-server-16b36.appspot.com/o/{{user.profile_pic}}?alt=media" ></ion-img>
+      </ion-avatar>
+      <!-- <ion-thumbnail slot="start" >
+          <ion-img src="https://firebasestorage.googleapis.com/v0/b/psn-server-16b36.appspot.com/o/{{user.profile_pic}}?alt=media" style="border-radius:50%"></ion-img>
+        </ion-thumbnail> -->
+    <ion-label>
+      <h2><b>{{user.full_name}}</b></h2>
+    </ion-label>
+    <!-- <ion-badge item-end>ADMIN</ion-badge> -->
+  </ion-item>
+  
+</ion-list>
+
+<ion-button *ngIf="connected_user_data" [ngStyle]="{'display': display_mode}" (click)="get_connected_users_caller()" fill="clear" fill="block">Show more</ion-button>
+
+
+</ion-content>

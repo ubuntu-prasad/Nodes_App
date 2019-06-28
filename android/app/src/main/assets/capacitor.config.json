@@ -1,0 +1,6 @@
+{
+  "appId": "com.nodesnetwork.app",
+  "appName": "Nodes",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}

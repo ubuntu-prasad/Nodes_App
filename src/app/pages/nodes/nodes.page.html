@@ -1,0 +1,79 @@
+
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-title style="color:white">Nodes</ion-title>
+    <ion-fab style="top:5%; right: 2%">
+        <ion-button fill="clear" (click)="presentActionSheet()">
+        <ion-icon name="md-more" size="default" class="icon-more"></ion-icon>
+      </ion-button>
+    </ion-fab>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding >
+
+    <!-- <ion-item *ngFor="let number of node_list">{{number}}</ion-item> -->
+    <!-- <ion-button (click)="get_images()  " expand="block" fill="outline" shape="round" color="secondary">Log In</ion-button> -->
+    <!-- <ion-button (click)="dddd()" expand="block" fill="outline" shape="round" color="secondary">fcm test</ion-button> -->
+
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content color="secondary"
+          pullingIcon="arrow-dropdown"
+          refreshingSpinner="crescent">
+        </ion-refresher-content>
+      </ion-refresher>
+    
+    <ion-list *ngIf="node_list">
+      <!-- <ion-list-header>Your Nodes</ion-list-header> -->
+      
+      <ion-item button (click)="goto_posts(node.name, node.node_description, node.profile_pic)"  *ngFor="let node of node_list2" class="wrap">
+        <ion-ripple-effect type="bounded"></ion-ripple-effect>  
+        <!-- <ion-icon name="ios-contacts" size="large" slot="start"></ion-icon> -->
+          
+          <ion-thumbnail slot="start" >
+              
+              <!-- <ion-img class="ghost" src="https://firebasestorage.googleapis.com/v0/b/psn-server-16b36.appspot.com/o/{{node.profile_pic}}?alt=media" style="border-radius:50%"></ion-img> -->
+              <ion-img class="ghost" src="{{images_map[node.profile_pic]}}" style="border-radius:50%"></ion-img>
+            </ion-thumbnail>
+        <!-- <ion-avatar slot="start">
+          <ion-img src="https://firebasestorage.googleapis.com/v0/b/psn-server-16b36.appspot.com/o/{{node.profile_pic}}?alt=media" ></ion-img>
+        </ion-avatar> -->
+        <ion-label>
+          <h2><b>@{{node.name}}</b></h2>
+          <p>{{ node.node_description }}</p>
+        </ion-label>
+        <!-- <ion-badge item-end>6</ion-badge> -->
+      </ion-item>
+  </ion-list>
+
+  <!-- [ngStyle]="{'display': fake_list_display}" -->
+  <!-- <ion-list *ngIf="!node_list">
+    
+    <ion-item *ngFor="let node of fake_list">
+      <ion-avatar slot="start" class="ghost">
+      </ion-avatar>
+      <ion-label>
+        <ion-skeleton-text width="100px"></ion-skeleton-text>
+      </ion-label>
+    </ion-item>
+  </ion-list> -->
+
+
+
+  <div [ngStyle]="{'display': display_mode}">
+    <p><b>Find Nodes and join!</b></p>
+    <p><b>Also you can create your own!</b></p>
+    <p>(pull me to refresh)</p>
+  </div>
+
+   <!-- <ion-item>
+    <ion-skeleton-text width="40px"></ion-skeleton-text> 
+  </ion-item>  -->
+</ion-content>
+<!-- <ion-footer no-shadow>
+  <ion-toolbar position="bottom">
+    <ion-item button (click)="get_connected_nodes_caller()">
+      <ion-icon name="refresh"></ion-icon> Refresh
+    </ion-item>
+  </ion-toolbar>
+</ion-footer> -->

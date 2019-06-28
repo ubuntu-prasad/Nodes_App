@@ -1,0 +1,87 @@
+<ion-header>
+    <ion-toolbar class="new-background-color">
+      <ion-title style="color:white">@{{ selected_node }}</ion-title>
+      <ion-fab style="top:5%; right: 2%">
+          <ion-button fill="clear" (click)="presentActionSheet()">
+          <ion-icon name="md-more" class="icon-more"></ion-icon>
+        </ion-button>
+      </ion-fab>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-content>
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+      <ion-fab-button (click)="get_images()"><ion-icon name="md-photos"></ion-icon></ion-fab-button>
+      <!-- <ion-fab-button>
+        <ion-icon name="md-add" size="large"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="top">
+        <ion-fab-button (click)="use_camera()"><ion-icon name="md-camera"></ion-icon></ion-fab-button>
+        <ion-fab-button (click)="get_images()"><ion-icon name="md-photos"></ion-icon></ion-fab-button>
+      </ion-fab-list> -->
+  </ion-fab>
+      
+
+
+
+
+  <ion-card text-wrap *ngFor="let each_post of posts_details2;let i = index">
+ 
+      <ion-img src={{images_map[each_post.pic_url]}}></ion-img>
+    <ion-row align-items-start>
+      <ion-col>
+          <ion-button fill="clear" size="small" (click)="coming_soon()">
+            <ion-icon name="thumbs-up" slot="start"></ion-icon> 
+            Likes
+          </ion-button>
+      </ion-col>
+
+      <ion-col>
+          <ion-button fill="clear" size="small" (click)="hideme[i] = !hideme[i]">
+            <ion-icon name="text" slot="start"></ion-icon> 
+            {{ each_post.comments.length}} Comments
+          </ion-button>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+
+    </ion-row>
+
+    <!-- comments section -->
+    <ion-list [hidden]="!hideme[i]"> 
+      <ion-item text-wrap *ngFor="let comment of each_post.comments">
+          <ion-avatar slot="start">
+              <ion-img  class="ghost"  src="https://firebasestorage.googleapis.com/v0/b/psn-server-16b36.appspot.com/o/{{comment.profile_pic}}?alt=media" ></ion-img>
+          </ion-avatar>
+        <ion-label>
+          <p><b>{{comment.full_namae}}</b></p>
+          <p text-wrap>{{comment.comment}}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item text-wrap >
+        <ion-avatar slot="start">
+            <ion-img  class="ghost"  src="https://firebasestorage.googleapis.com/v0/b/psn-server-16b36.appspot.com/o/{{profile_pic}}?alt=media" ></ion-img>
+        </ion-avatar>
+        <ion-input  text-wrap placeholder="Your comment" [(ngModel)]="comments_list[i]" ></ion-input>
+      <ion-button slot="end" size="default" fill="clear" (click)="submit_comment_caller(each_post.pic_url, i)">
+          <ion-icon button name="send" color="success"></ion-icon>
+        <!-- <ion-icon button name="send" color="success" (click)="submit_comment_caller(each_post.pic_url, i)"></ion-icon> -->
+      </ion-button>
+    </ion-item>
+
+    </ion-list>
+
+
+
+  </ion-card>
+
+
+  
+  <div [ngStyle]="{'display': display_mode}">
+    <p><b>Upload your cool photos! :)</b></p>
+  </div>
+  
+  
+  </ion-content>

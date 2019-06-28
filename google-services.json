@@ -1,0 +1,43 @@
+{
+  "project_info": {
+    "project_number": "449407545848",
+    "firebase_url": "https://psn-server-16b36.firebaseio.com",
+    "project_id": "psn-server-16b36",
+    "storage_bucket": "psn-server-16b36.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449407545848:android:3061762e07a7b1da",
+        "android_client_info": {
+          "package_name": "com.nodesnetwork.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "449407545848-1n49s2vqj1jgni53f34i4akive3athum.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdgnfKHDv0iLnQi5cfBQM5UpY1nlqTy78"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+    
+  ],
+  "configuration_version": "1"
+}

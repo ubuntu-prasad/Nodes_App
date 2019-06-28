@@ -1,0 +1,27 @@
+
+<ion-content padding>
+<br>
+<ion-row >
+  <ion-col>
+    <ion-avatar style="margin:auto">
+    <ion-img src="../../../assets/imgs/ic_launcher.png"></ion-img>
+  </ion-avatar>
+  </ion-col>
+</ion-row>
+
+    <br><br><br><br>
+      <ion-item>
+        <ion-input [(ngModel)]="email" required type="email" placeholder="Email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="password" required type="password" placeholder="Password (more than 5 characters)"></ion-input>
+      </ion-item>
+      <br>
+      <ion-button size="large" (click)="sign_in_caller()"  expand="block" fill="solid"  color="secondary"><p>Create an Account</p></ion-button>
+      <ion-button (click)="log_in_caller()"  expand="block" fill="outline"  color="secondary">Log In</ion-button>
+      <p></p>
+
+
+
+  </ion-content>
+  

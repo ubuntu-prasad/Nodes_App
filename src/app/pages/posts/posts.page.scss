@@ -1,0 +1,48 @@
+.new-background-color{
+    --background: #364156;
+}
+
+
+ion-img{
+    --img-placeholder-background: #364156;
+}
+
+ion-grid{
+margin-left: 1%;
+margin-right: 1%;
+margin-top: 1%
+}
+
+.icon-more{
+    // font-size: 15px;
+    color:white;
+  }
+
+
+// .image{
+//     background-image: url('../../../assets/imgs/camera-placeholder.jpg');
+// }
+
+img {
+    border-radius: 20% !important;
+    overflow: hidden;
+}
+
+ion-content {
+    div {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: grey;
+      font-family: monospace
+    }
+   }
+
+
+
+   .ghost{
+    background-color: lightgrey;
+  }

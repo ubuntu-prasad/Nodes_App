@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-title style="color:white">Nodes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      refreshingSpinner="crescent">
+    </ion-refresher-content>
+  </ion-refresher>  
+
+  <ion-list>      
+      <ion-item (click)="acceptRequest(notification.request_id)" button *ngFor="let notification of notification_details" class="wrap">
+
+          <ion-thumbnail slot="start" >
+              <ion-img class="ghost" src="https://firebasestorage.googleapis.com/v0/b/psn-server-16b36.appspot.com/o/{{notification.profile_pic}}?alt=media" style="border-radius:50%"></ion-img>
+          </ion-thumbnail>
+            <p><b>{{notification.requester_name}}</b> sent a request to join <b>{{notification.node_name}}</b></p>
+      </ion-item>
+  </ion-list>
+
+  <div [ngStyle]="{'display': display_mode}">
+    <p>(pull me to refresh)</p>
+  </div>
+
+
+
+</ion-content>

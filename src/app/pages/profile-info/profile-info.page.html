@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-toolbar class="new-background-color">
+      <ion-title style="color:white">Settings</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <br><br>
+
+    <ion-list>  
+      <ion-item>
+          <ion-thumbnail slot="start">
+              <ion-img class="placeh" style="border-radius:50%" button (click)="get_profile_image()" [src]="profile_pic_placeholder"></ion-img>
+          </ion-thumbnail>
+          <ion-input [(ngModel)]="full_name" required type="text" placeholder="Type your name"></ion-input>
+          <!-- <ion-button (click)="update_profile_caller()" fill="clean" expand="full" size="default">
+              <ion-icon button item-end name="md-checkmark-circle" size="large" color="success"></ion-icon>
+          </ion-button> -->
+        </ion-item>
+
+    </ion-list>  
+    <ion-button (click)="update_profile_caller()" color="success" expand="block" size="default" fill="outline">
+      <!-- <ion-icon button item-end name="md-checkmark-circle" size="large" color="success"></ion-icon> -->
+    Update Profile
+  </ion-button>
+  <ion-list>
+    <ion-item button (click)="logout_user()">
+      <ion-icon slot="start" name="md-exit"></ion-icon>
+      <ion-label item-end>
+        <h2>Logout</h2>
+      </ion-label>
+    </ion-item>
+
+    <ion-item button (click)="feedback()">
+      <ion-icon slot="start" name="heart-half"></ion-icon>
+      <ion-label item-end>
+        <h2>Feedback</h2>
+      </ion-label>
+    </ion-item>
+
+    <ion-item button (click)="app_info()">
+      <ion-icon slot="start" name="information-circle-outline"></ion-icon>
+      <ion-label item-end>
+        <h2>App Info</h2>
+      </ion-label>
+    </ion-item>
+
+
+
+  </ion-list>
+
+
+
+  </ion-content>
+
+  <ion-footer>
+
+  </ion-footer>
+  

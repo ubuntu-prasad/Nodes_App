@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-title style="color:white">Nodes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>Find Nodes</ion-list-header>
+
+    <ion-item>
+        <ion-input [(ngModel)]="search_name" (ngModelChange) ="search_node_caller()" required type="text" placeholder="ex: sigiriya_pix"></ion-input>
+
+      <ion-button (click)="search_node_caller()" fill="clean" expand="full" size="default">
+        <ion-icon button item-end name="md-search" size="large" color="primary"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>  
+
+  <!-- search results -->
+  <ion-list>
+    <!-- <ion-list-header>Search results</ion-list-header> -->
+    <ion-item  *ngFor="let node_name of names_list">
+      <ion-thumbnail slot="start">
+          <ion-img style="border-radius:50%" src="https://firebasestorage.googleapis.com/v0/b/psn-server-16b36.appspot.com/o/{{ node_name.profile_pic }}?alt=media"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2><b>@{{ node_name.name }}</b></h2>
+        <!-- <p>{{ node_name.node_descriptions }}</p> -->
+      </ion-label>
+      <ion-button (click)="join_node_caller(node_name.name)" shape="round" fill="outline" size="small" color="primary" expand="full" size="default">
+        Join
+      </ion-button>
+    </ion-item>
+
+</ion-list>
+
+</ion-content>

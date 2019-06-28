@@ -1,0 +1,44 @@
+.new-background-color{
+    --background: #364156;
+}
+.icon-more{
+    // font-size: 15px;
+    color:white;
+  }
+ion-content {
+ div {
+   height: 100%;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   color: grey;
+   font-family: monospace
+ }
+}
+
+.ghost{
+  background-color: lightgrey;
+}
+
+.image{
+  background-image: url('../../../assets/imgs/loading.gif');
+  @keyframes shine{
+    10% {
+      opacity: 1;
+      top: -30%;
+      left: -30%;
+      transition-property: left, top, opacity;
+      transition-duration: 0.7s, 0.7s, 0.15s;
+      transition-timing-function: ease;
+    }
+    100% {
+      opacity: 0;
+      top: -30%;
+      left: -30%;
+      transition-property: left, top, opacity;
+    }
+  }
+}
+
