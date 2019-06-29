@@ -52,16 +52,16 @@ This is the mobile app created using Ionic4 for Nodes Network.
 
 ## Ionic-Native Plugins
 
-    - StatusBar
-    - SplashScreen
-    - Camera
-    - NativeStorage
-    - ImagePicker
-    - FileTransfer
-    - File
-    - LocalNotifications
-    - WebView
-    - FCM
-    - WebIntent
-    - FilePath
-    - NativePageTransitions
+- StatusBar
+- SplashScreen
+- Camera
+- NativeStorage
+- ImagePicker
+- FileTransfer
+- File
+- LocalNotifications
+- WebView
+- FCM
+- WebIntent
+- FilePath
+- NativePageTransitions
